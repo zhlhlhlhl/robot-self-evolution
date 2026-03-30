@@ -1,0 +1,18 @@
+llm:
+  # OpenAI-compatible endpoint. For Qwen-VL (DashScope compatible mode),
+  # typical base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
+  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  api_key_env: "RSE_LLM_API_KEY"
+  model: "qwen-vl-max"
+  timeout_s: 30
+
+planner:
+  enabled: true
+  temperature: 0.0
+
+judge:
+  enabled: true
+  temperature: 0.0
+  min_confidence: 0.6
+  # when confidence < min_confidence, fallback to rule-based judge
+  fallback_rule_judge: true
