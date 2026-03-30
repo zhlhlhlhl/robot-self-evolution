@@ -1,0 +1,18 @@
+cloud:
+  sim:
+    base_url: "http://localhost:8081"
+    token: ""
+    timeout_s: 15
+    endpoints:
+      reset: "/sim/reset"
+      execute: "/sim/execute"
+      close: "/sim/close"
+
+  rl:
+    base_url: "http://localhost:8091"
+    token: ""
+    timeout_s: 20
+    endpoints:
+      submit: "/rl/train"
+      status: "/rl/train/{job_id}/status"
+      result: "/rl/train/{job_id}/result"

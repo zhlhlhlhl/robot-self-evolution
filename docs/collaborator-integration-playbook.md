@@ -21,8 +21,11 @@
    - 文件可放：`src/rse/adapters/sim_env_cloud.py`
    - 实现：`reset` / `execute_subtask` / `close`
 2. 新建 `CloudRLTrainer`（继承 `RLTrainerAdapter`）
-   - 文件可放：`src/rse/adapters/rl_trainer_cloud.py`
+   - 文件已提供：`src/rse/adapters/rl_trainer_cloud.py`
    - 实现：`submit` / `status` / `fetch_result`
+3. 新建/使用 `CloudSimEnvAdapter`（继承 `SimEnvAdapter`）
+   - 文件已提供：`src/rse/adapters/sim_env_cloud.py`
+   - 实现：`reset` / `execute_subtask` / `close`
 
 ---
 

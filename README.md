@@ -25,6 +25,7 @@ python scripts/run_demo.py
 - `docs/project-architecture.md`：架构说明
 - `docs/rl-module-integration.md`：RL 合作模块接入说明
 - `docs/collaborator-integration-playbook.md`：合作者快速集成手册（含仿真环境对接）
+- `docs/http-grpc-placeholder-guide.md`：HTTP/gRPC 占位实现说明
 - `src/rse/core/`：核心数据结构和协议
 - `src/rse/loop/`：执行、判定、统计、触发逻辑
 - `src/rse/adapters/`：导航工具/VLA/训练器的适配层（占位）
