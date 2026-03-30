@@ -1,0 +1,14 @@
+judge:
+  judge_tick_s: 1.0
+  no_progress_window_s: 8.0
+  progress_epsilon: 0.02
+
+trigger:
+  min_samples: 30
+  trigger_failure_rate: 0.30
+  min_concentration: 0.60
+  cooldown_minutes: 60
+
+demo:
+  episodes: 80
+  focus_task: pick_apple
