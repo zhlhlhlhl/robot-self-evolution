@@ -1,0 +1,14 @@
+problem custom_behavior_task-0
+(:domain omnigibson)
+(:objects
+  agent.n.01_1 - agent.n.01
+  mug.n.04_1 - mug.n.04
+  table.n.02_1 - table.n.02
+)
+(:init
+)
+(:goal
+  (and
+    (ontop mug.n.04_1 table.n.02_1)
+  )
+)
