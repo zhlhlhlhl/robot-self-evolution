@@ -7,7 +7,18 @@ cd third_party/rlinf_behavior_training_bundle
 ./scripts/install_into_rlinf.sh /abs/path/to/RLinf
 ```
 
-## 2. Launch official BEHAVIOR training
+## 2. Launch the UI scene editor on a machine with a display
+
+```bash
+cd /abs/path/to/RLinf/examples/embodiment
+./launch_behavior_scene_editor.sh \
+  --scene-model house_double_floor_lower \
+  --output-scene /tmp/my_behavior_scene.json
+```
+
+For more detail, see `docs/ui_scene_editor.md`.
+
+## 3. Launch official BEHAVIOR training
 
 Inside the RLinf repo:
 
@@ -22,7 +33,7 @@ Logs will be written under:
 /abs/path/to/RLinf/logs/<timestamp>-behavior_ppo_openvlaoft/
 ```
 
-## 3. Test a checkpoint and save eval video
+## 4. Test a checkpoint and save eval video
 
 ### Evaluate the base model
 
@@ -53,7 +64,7 @@ Notes:
 - The script resolves `actor/model_state_dict/full_weights.pt` automatically.
 - `--max-steps` is auto-adjusted upward so it is divisible by `action_chunks`.
 
-## 4. Train on a custom scene and custom BEHAVIOR problem
+## 5. Train on a custom scene and custom BEHAVIOR problem
 
 Prepare:
 - a custom scene JSON that OmniGibson can load
@@ -86,13 +97,13 @@ Optional overrides:
   --max-epochs 10
 ```
 
-## 5. Files to edit directly
+## 6. Files to edit directly
 
 If you prefer editing config files instead of using launcher args:
 - `examples/embodiment/config/env/behavior_custom_r1pro.yaml`
 - `examples/embodiment/config/behavior_custom_ppo_openvlaoft.yaml`
 
-## 6. Common failure modes
+## 7. Common failure modes
 
 ### `env.eval.max_steps_per_rollout_epoch must be divisible by actor.model.num_action_chunks`
 

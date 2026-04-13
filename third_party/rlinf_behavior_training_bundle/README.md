@@ -4,6 +4,7 @@ This directory packages the working BEHAVIOR-related code changes from a local R
 
 It includes:
 - machine-validated BEHAVIOR launch fixes for headless Vulkan / OmniGibson startup
+- a monitor-friendly UI scene editor launcher for manual scene layout and JSON export
 - near-official `behavior_ppo_openvlaoft` training config and launcher
 - an eval video script for testing a checkpoint and exporting MP4s
 - a custom-task training entry that supports your own scene JSON + `predefined_problem`
@@ -15,6 +16,7 @@ It includes:
 - `scripts/install_into_rlinf.sh`: one-command installer into an RLinf checkout
 - `docs/setup.md`: environment and dependency notes
 - `docs/usage.md`: training, eval, and custom-task usage
+- `docs/ui_scene_editor.md`: monitor-based scene editing workflow
 - `examples/custom_problem_template.bddl`: minimal custom BEHAVIOR problem template
 
 ## What changed
@@ -27,7 +29,16 @@ It includes:
 - auto-detects `OMNIGIBSON_DATA_PATH`
 - derives `OMNIGIBSON_DATASET_PATH`, `OMNIGIBSON_KEY_PATH`, and `OMNIGIBSON_ASSET_PATH`
 
-### 2. Official BEHAVIOR training path
+### 2. UI scene editor for machines with a display
+
+`overlay/examples/embodiment/launch_behavior_scene_editor.py`
+`overlay/examples/embodiment/launch_behavior_scene_editor.sh`
+- launch OmniGibson in non-headless mode
+- load either an official scene model or an existing scene JSON
+- enable viewer-camera teleoperation
+- save the current scene JSON by pressing `Z`
+
+### 3. Official BEHAVIOR training path
 
 `overlay/examples/embodiment/config/behavior_ppo_openvlaoft.yaml`
 - keeps the OpenVLA-OFT + LoRA training path
@@ -36,7 +47,7 @@ It includes:
 `overlay/examples/embodiment/config/env/behavior_r1pro.yaml`
 - contains the BEHAVIOR task-instance loading improvements used in the validated run
 
-### 3. Checkpoint eval + video export
+### 4. Checkpoint eval + video export
 
 `overlay/examples/embodiment/test_behavior_model_video.sh`
 - runs `eval_embodied_agent.py`
@@ -45,7 +56,7 @@ It includes:
 - auto-resolves `resume-dir/actor/model_state_dict/full_weights.pt`
 - auto-adjusts `--max-steps` so it is divisible by `action_chunks`
 
-### 4. Custom scene + custom task RL training
+### 5. Custom scene + custom task RL training
 
 `overlay/examples/embodiment/train_custom_behavior.sh`
 - accepts a custom scene JSON and a custom BEHAVIOR / BDDL problem file
@@ -76,3 +87,4 @@ That copies `overlay/*` into your RLinf checkout.
 
 - See `docs/setup.md` for environment configuration.
 - See `docs/usage.md` for the exact train / eval / custom-task commands.
+- See `docs/ui_scene_editor.md` for the monitor-based scene editing workflow.
